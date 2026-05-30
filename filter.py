@@ -74,13 +74,13 @@ def design_iir(y, harmonics, Fs, fo, filter_type=Filter.BUTTER,
         w, h = signal.freqz_sos(sos)
         fr = w * (Fs / 2) / np.pi
 
-        if plot:
-            plt.figure()
-            plt.plot(fr, np.abs(h), 'b')
-            plt.title(f'Frekvenčni odziv ({filter_type})')
-            plt.xlabel('Frekvenca [Hz]')
-            plt.ylabel('Ojačanje')
-            plt.grid(True)
+        #if plot:
+            #plt.figure()
+            #plt.plot(fr, np.abs(h), 'b')
+            #plt.title(f'Frekvenčni odziv ({filter_type})')
+            #plt.xlabel('Frekvenca [Hz]')
+            #plt.ylabel('Ojačanje')
+            #plt.grid(True)
 
         # Apliciraj na izhod prejšnjega filtra
         output = signal.sosfiltfilt(sos, output)
